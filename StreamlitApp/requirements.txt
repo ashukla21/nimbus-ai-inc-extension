@@ -14,5 +14,5 @@ lmdb==0.94
 opencv-python==3.4.0.12
 h5py==2.7.1
 scipy==1.1.0
-tensorflow-cpu==2.1.0
+tensorflow==1.15.4
 scikit_learn==0.20.0
