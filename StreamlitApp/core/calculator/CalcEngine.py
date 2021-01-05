@@ -21,6 +21,7 @@ nlp = spacy.load('en_core_web_sm')
 #custom funtion 
 def summary(text):
     return summarize(text)
+    
 
 # Custom Components Fxn
 def st_calculator(calc_html,width=1000,height=1350):
