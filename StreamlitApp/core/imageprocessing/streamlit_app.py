@@ -17,12 +17,9 @@ TL_GAN_HASH_FUNCS = {
     tf.Session : id
 }
 
-def calc_main(title, subtitle):
-    st.sidebar.title(title)
-    st.sidebar.info(
-        subtitle
-    )
-    st.title("Streamlit Face-GAN Demo")
+def calc_main():
+    st.title("Nimbus Mien")
+    st.sidebar.header("Input Options") 
     """This demo demonstrates  using [Nvidia's Progressive Growing of GANs](https://research.nvidia.com/publication/2017-10_Progressive-Growing-of) and 
     Shaobo Guan's [Transparent Latent-space GAN method](https://blog.insightdatascience.com/generating-custom-photo-realistic-faces-using-ai-d170b1b59255) 
     for tuning the output face's characteristics. For more information, check out the tutorial on [Towards Data Science](https://towardsdatascience.com/building-machine-learning-apps-with-streamlit-667cef3ff509)."""
@@ -35,7 +32,6 @@ def calc_main(title, subtitle):
     tl_gan_model, feature_names = load_tl_gan_model()
     session, pg_gan_model = load_pg_gan_model()
 
-    st.sidebar.title('Features')
     seed = 27834096
     # If the user doesn't want to select which features to control, these will be used.
     default_control_features = ['Young','Smiling','Male']
@@ -63,15 +59,11 @@ def calc_main(title, subtitle):
 
     st.sidebar.title('Note')
     st.sidebar.write(
-        """Playing with the sliders, you _will_ find **biases** that exist in this model.
+        """Certain extremeties cause issues with the AI model
         """
     )
     st.sidebar.write(
-        """For example, moving the `Smiling` slider can turn a face from masculine to feminine or from lighter skin to darker. 
-        """
-    )
-    st.sidebar.write(
-        """Apps like these that allow you to visually inspect model inputs help you find these biases so you can address them in your model _before_ it's put into production.
+        """For instance, when setting the 'smiling' value to absolutes, femininity is affected.
         """
     )
 
