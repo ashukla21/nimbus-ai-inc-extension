@@ -20,9 +20,15 @@ TL_GAN_HASH_FUNCS = {
 def calc_main():
     st.title("Nimbus Mien")
     st.sidebar.header("Input Options") 
-    """This demo demonstrates  using [Nvidia's Progressive Growing of GANs](https://research.nvidia.com/publication/2017-10_Progressive-Growing-of) and 
-    Shaobo Guan's [Transparent Latent-space GAN method](https://blog.insightdatascience.com/generating-custom-photo-realistic-faces-using-ai-d170b1b59255) 
-    for tuning the output face's characteristics. For more information, check out the tutorial on [Towards Data Science](https://towardsdatascience.com/building-machine-learning-apps-with-streamlit-667cef3ff509)."""
+    expander_bar = st.beta_expander("How To Use This App")
+    expander_bar.markdown("""
+
+    **Please keep in mind that this app may take anywhere from 15 seconds to a couple minutes to load due to its large slugsize.**
+
+    1) Use the **sliders** located within the sidebar on the left to alter the face that is generated. 
+
+    2) You can select which of the 33 facial features you want to alter using the **Show Advanced Options** box to select and deselect features.
+    """)
 
     # Download all data files if they aren't already in the working directory.
     for filename in EXTERNAL_DEPENDENCIES.keys():
